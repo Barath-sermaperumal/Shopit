@@ -310,7 +310,7 @@ const addProduct = () => {
   }, 2000);
 
   localStorage.setItem("products", JSON.stringify(products));
-  location.href = "/Pages/Admin/index.html";
+  location.href = "/Shopit/Pages/Admin/index.html";
 };
 
 //edit product
@@ -351,7 +351,7 @@ const addToCart = (id) => {
   let product = products.find((product) => product.id === parseInt(id));
 
   if (!sessionStorage.getItem("userId")) {
-    location.href("/Pages/login.html");
+    location.href("/Shopit/Pages/login.html");
   } else {
     let userId = JSON.parse(sessionStorage.getItem("userId"));
     let cart = [];
@@ -396,7 +396,7 @@ const updateCartCount = () => {
         cartCountRef.innerText = `Cart - ${cartCount}`;
       } else cartCountRef.innerText = `Cart`;
     }
-  } else location.href = "/pages/login.html";
+  } else location.href = "/Shopit/pages/login.html";
 };
 
 //load cart page
@@ -437,7 +437,7 @@ const loadCartPage = () => {
       cartTableRef.innerHTML = body;
       totalRef.innerText = `Total - ₹ ${total}`;
     } else {
-      location.href = "/Pages/login.html";
+      location.href = "/Shopit/Pages/login.html";
     }
   }
 };
