@@ -202,7 +202,6 @@ window.addEventListener("load", () => {
     loadCartPage();
   }
 
-
   if (
     location.pathname === "/Shopit/Pages/index.html" ||
     location.pathname === "/Shopit/Pages/orders.html" ||
