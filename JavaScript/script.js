@@ -106,8 +106,8 @@ const SigningIn = () => {
     } else {
       sessionStorage.setItem("userId", actUser.id);
       if (emailRef.value === "barath@gmail.com")
-        location.replace("/Pages/Admin/index.html");
-      else location.replace("/Pages/index.html");
+        location.replace("/Shopit/Pages/Admin/index.html");
+      else location.replace("/Shopit/Pages/index.html");
     }
   } else {
     intimationRef.innerHTML = "Fields are Empty";
@@ -117,7 +117,7 @@ const SigningIn = () => {
 // sign Out
 const SigningOut = () => {
   sessionStorage.removeItem("userId");
-  location.replace("/Pages/login.html");
+  location.replace("/Shopit/Pages/login.html");
 };
 
 // random number
@@ -164,7 +164,7 @@ const SigningUp = () => {
         });
 
         localStorage.setItem("users", JSON.stringify(users));
-        location.href = "/Pages/login.html";
+        location.href = "/Shopit/Pages/login.html";
       } else {
         intimationRef.innerText = "password mismatch";
       }
@@ -182,15 +182,15 @@ window.addEventListener("load", () => {
     localStorage.setItem("users", JSON.stringify(defaultUsers));
   }
 
-  if (location.pathname === "/Pages/Admin/index.html") {
+  if (location.pathname === "/Shopit/Pages/Admin/index.html") {
     loadAdminHomePage();
   }
 
-  if (location.pathname === "/Pages/Admin/orders.html") {
+  if (location.pathname === "/Shopit/Pages/Admin/orders.html") {
     loadAdminOrdersPage();
   }
 
-  if (location.pathname === "/Pages/orders.html") {
+  if (location.pathname === "/Shopit/Pages/orders.html") {
     loadOrdersPage();
   }
 
@@ -198,19 +198,20 @@ window.addEventListener("load", () => {
     loadHomePage();
   }
 
-  if (location.pathname === "/Pages/cart.html") {
+  if (location.pathname === "/Shopit/Pages/cart.html") {
     loadCartPage();
   }
 
+
   if (
-    location.pathname === "/Pages/index.html" ||
-    location.pathname === "/Pages/orders.html" ||
-    location.pathname === "/Pages/cart.html"
+    location.pathname === "/Shopit/Pages/index.html" ||
+    location.pathname === "/Shopit/Pages/orders.html" ||
+    location.pathname === "/Shopit/Pages/cart.html"
   ) {
     updateCartCount();
   }
 
-  if (location.pathname === "/Pages/Admin/Addproduct.html") {
+  if (location.pathname === "/Shopit/Pages/Admin/Addproduct.html") {
     let params = new URL(document.location).searchParams;
     let productId = params.get("id");
     if (productId) {
@@ -314,7 +315,7 @@ const addProduct = () => {
 
 //edit product
 const editProduct = (id) => {
-  location.href = `/Pages/Admin/Addproduct.html?id=${id}`;
+  location.href = `/Shopit/Pages/Admin/Addproduct.html?id=${id}`;
 };
 
 //delete product
@@ -464,12 +465,12 @@ const checkOut = () => {
       localStorage.setItem("cart", JSON.stringify(otherUserCart));
       localStorage.setItem("orders", JSON.stringify(orders));
       updateCartCount();
-      location.href = "/Pages/index.html";
+      location.href = "/Shopit/Pages/index.html";
     } else {
-      location.href = "/Pages/index.html";
+      location.href = "/Shopit/Pages/index.html";
     }
   } else {
-    location.href = "/Pages/login.html";
+    location.href = "/Shopit/Pages/login.html";
   }
 };
 
@@ -506,10 +507,10 @@ const loadOrdersPage = () => {
       }
       tableRef.innerHTML = body;
     } else {
-      location.href = "/pages/index.html";
+      location.href = "/Shopit/pages/index.html";
     }
   } else {
-    location.href = "/pages/login.html";
+    location.href = "/Shopit/pages/login.html";
   }
 };
 
@@ -570,9 +571,9 @@ const loadAdminOrdersPage = () => {
         });
       }
     } else {
-      location.href = "/Pages/index.html";
+      location.href = "/Shopit/Pages/index.html";
     }
   } else {
-    location.href = "/Pages/login.html";
+    location.href = "/Shopit/Pages/login.html";
   }
 };
