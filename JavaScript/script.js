@@ -194,7 +194,7 @@ window.addEventListener("load", () => {
     loadOrdersPage();
   }
 
-  if (location.pathname === "/Pages/index.html") {
+  if (location.pathname === "/Shopit/Pages/index.html") {
     loadHomePage();
   }
 
