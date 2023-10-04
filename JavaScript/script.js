@@ -232,7 +232,7 @@ const loadHomePage = () => {
   for (let product of products) {
     body += `<div class="col mb-5">
     <div class="card min-vh-100">
-      <img src=${product.thumbnail} class="card-img-top" style="min-width:200px;height:350px" />
+      <img src=${product.thumbnail} class="card-img-top" style="min-width:200px;height:300px" />
       <div class="card-body style="">
         <h5 class="card-title">${product.title}</h5>
         <p class="card-text h-50">
